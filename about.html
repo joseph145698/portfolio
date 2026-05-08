@@ -11,6 +11,16 @@
 </head>
 <body>
 
+<div class="gradient-background">
+    <div class="gradient-sphere sphere-1"></div>
+    <div class="gradient-sphere sphere-2"></div>
+    <div class="gradient-sphere sphere-3"></div>
+    <div class="glow"></div>
+    <div class="grid-overlay"></div>
+    <div class="noise-overlay"></div>
+    <div class="particles-container" id="particles-container"></div>
+</div>
+
 <header class="header">
     <nav class="top-nav">
         <a href="index.html"><i class="bx bx-home"></i><span>Home</span></a>
@@ -20,7 +30,7 @@
         <a href="contacts.html"><i class="bx bx-envelope"></i><span>Contacts</span></a>
     </nav>
 
-    <a href="index.html" class="reset-btn">Joseph Paterno</a>
+    <a href="index.html" id="reset-loader" class="reset-btn">Joseph Rey Paterno</a>
 </header>
 
 <section class="about page-section">
@@ -29,31 +39,41 @@
             <h1>About Me</h1>
             <h3 class="about-subtitle">Let me introduce myself . . . </h3>
             <p>
-                I am currently a second-year college student pursuing a BSIT degree at St. Dominic College of Asia (2026). 
-                I love to continuously hone my knowledge and skills in programming by challenging myself with various school projects and 
-                learning how to use and navigate through new technologies. I am passionate about web development and my dream is to become
-                a successful full-stack web developer in the future. My hobbies are playing the guitar, playing online games, and biking outdoors.
+                I am currently a second-year college student pursuing a BSIT degree at St. Dominic College of Asia (as of the academic year 2025-2026). I enjoy learning new things in IT and continuously improving myself and my skills through our projects in school. But outside of academics, I like gaming, biking outdoors, playing sports, and playing guitar.
             </p>
             <p>
-                Through my academic projects during this second-year of college, I have developed many Android applications using Android Studio, 
-                where I learned how to design user interfaces and implement functionality in mobile applications. I also have some prior experiences 
-                in database management using PostgreSQL and pgAdmin, where I gained knowledge in database design, data querying, and even making my 
-                own database applications using Apache Netbeans. Additionally, I am continuously leveraging and learning how to use VSCode as a beginner, 
-                and I have worked on this web developer portfolio project, and through this major project, I have learned how to use HTML, CSS, and 
-                JavaScript to create responsive and interactive web portfolio.
+                I have experience in developing Android applications using Android Studio and building database-driven systems using pgAdmin 4 and Apache NetBeans. I am eager and passionate about expanding my knowledge in front-end web development using HTML, CSS, JavaScript, and VS Code as I work on projects such as this web developer portfolio. My goal in life is to become a successful full-stack web developer in the future and continue to improve my skills and knowledge as I gain more experience in this field.
             </p>
         </div>
 
         <div class="about-images">
-            <img src="images/projects/android-studio-appproject.png" alt="Android Studio App Project">
-            <img src="images/projects/vscode-coding.jpg" alt="Coding in VS Code">
-            <img src="images/projects/postgresql-pgadmin-dbmsproject.png" alt="PostgreSQL Project Work">
-        </div>
+    <img 
+        src="images/projects/android-studio-appproject.png" 
+        alt="Android Studio App Project"
+        data-description="One of my Android Studio projects, this is a parody to the famous online shopping platform Amazon."
+    >
+
+    <img 
+        src="images/projects/vscode-coding.jpg" 
+        alt="Coding in VS Code"
+        data-description="This portfolio was created using Visual Studio Code, where I applied HTML, CSS, and JavaScript."
+    >
+
+    <img 
+        src="images/projects/apache-netbeans-final-project.png" 
+        alt="Final Project in ADBMS using Apache Netbeans"
+        data-description="Our database management project using Apache Netbeans for frontend design and pgAdmin 4 for PostgreSQL database."
+    >
+
+</div>
     </div>
 </section>
 
 <div class="lightbox" id="lightbox">
-    <img src="" alt="Zoomed Image">
+    <div class="lightbox-content">
+        <img src="" alt="Zoomed Image">
+        <p class="lightbox-description"></p>
+    </div>
 </div>
 
 <script src="script.js"></script>
