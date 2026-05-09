@@ -886,7 +886,7 @@ body.lightbox-active {
     margin: 2rem auto 0;
     padding: 1rem 2.4rem;
 
-    background-color: rgba(255, 255, 255, 0.18);
+    background-color: rgb(80, 80, 80);
     color: #ffffff;
 
     border: 1px solid rgba(255, 255, 255, 0.45);

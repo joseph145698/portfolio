@@ -92,6 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!lightbox || !lightboxImg) return;
 
     let isClosing = false;
+    let currentCertificateLink = "";
 
     const clickableImages = document.querySelectorAll(
         ".about-images img, .certifications-images img"
@@ -107,6 +108,8 @@ document.addEventListener("DOMContentLoaded", () => {
             if (lightboxDescription) {
                 lightboxDescription.textContent = img.dataset.description || "";
             }
+
+            currentCertificateLink = img.dataset.link || "";
 
             document.body.classList.add("lightbox-active");
 
@@ -124,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             setTimeout(() => {
                 lightboxImg.src = "";
+                currentCertificateLink = "";
 
                 if (lightboxDescription) {
                     lightboxDescription.textContent = "";
@@ -141,11 +145,13 @@ document.addEventListener("DOMContentLoaded", () => {
         certificateButton.addEventListener("click", (e) => {
             e.stopPropagation();
 
-            window.open(
-                "https://www.linkedin.com/in/joseph-rey-paterno-368247406/details/certifications/",
-                "_blank",
-                "noopener,noreferrer"
-            );
+            if (currentCertificateLink) {
+                window.open(
+                    currentCertificateLink,
+                    "_blank",
+                    "noopener,noreferrer"
+                );
+            }
         });
     }
 });
