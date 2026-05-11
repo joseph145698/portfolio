@@ -60,15 +60,33 @@ window.addEventListener("load", function () {
     const resetBtn = document.getElementById("reset-loader");
 
     if (resetBtn) {
-        resetBtn.addEventListener("click", (e) => {
-            e.preventDefault();
+    resetBtn.addEventListener("click", (e) => {
+        e.preventDefault();
 
-            const confirmReset = confirm("Go back to homepage?");
-
-            if (confirmReset) {
+        Swal.fire({
+            title: "Go back to homepage?",
+            text: "The Hello, World! intro animation will play again.",
+            icon: "question",
+            background: "#242424",
+            color: "#ffffff",
+            confirmButtonText: "Continue",
+            cancelButtonText: "Cancel",
+            showCancelButton: true,
+            confirmButtonColor: "#ffffff",
+            cancelButtonColor: "#555555",
+            customClass: {
+                popup: "custom-swal-popup",
+                title: "custom-swal-title",
+                htmlContainer: "custom-swal-text",
+                confirmButton: "custom-swal-confirm",
+                cancelButton: "custom-swal-cancel"
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
                 setLocalStorageItem(loaderDoneKey, "false");
                 window.location.href = "index.html";
             }
+            });
         });
     }
 
@@ -156,7 +174,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// particle background animation (for homepage testing)
+// Particle background animation (for homepage testing)
 
 function showCurrentPageAnimation() {
     const sections = document.querySelectorAll(".home, .about, .certifications, .tech-stack, .contacts");
