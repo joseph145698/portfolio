@@ -325,16 +325,21 @@ section {
 }
 
 .certifications-images {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 3rem;
+    width: 100%;
 }
 
 .certifications-images img {
-    width: 250px;
+    width: 100%;
+    max-width: 340px;
+
     border-radius: 1rem;
+
     cursor: pointer;
+
+    object-fit: contain;
 
     --translateY: 35px;
     --scale: 1;
@@ -346,6 +351,14 @@ section {
         transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
         opacity 0.9s ease,
         filter 0.25s ease;
+}
+
+.cert-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 100%;
 }
 
 .certifications-images img:hover {
@@ -364,12 +377,19 @@ section {
 }
 
 /* domino effect slide-up/fade-in animation for 6 certificates */
-.certifications.show:not(.animation-done) .certifications-images img:nth-child(1) { transition-delay: 0.2s; }
-.certifications.show:not(.animation-done) .certifications-images img:nth-child(2) { transition-delay: 0.35s; }
-.certifications.show:not(.animation-done) .certifications-images img:nth-child(3) { transition-delay: 0.5s; }
-.certifications.show:not(.animation-done) .certifications-images img:nth-child(4) { transition-delay: 0.65s; }
-.certifications.show:not(.animation-done) .certifications-images img:nth-child(5) { transition-delay: 0.8s; }
-.certifications.show:not(.animation-done) .certifications-images img:nth-child(6) { transition-delay: 0.95s; }
+.certifications.show:not(.animation-done) .cert-card:nth-child(1) img { transition-delay: 0.2s; }
+.certifications.show:not(.animation-done) .cert-card:nth-child(2) img { transition-delay: 0.35s; }
+.certifications.show:not(.animation-done) .cert-card:nth-child(3) img { transition-delay: 0.5s; }
+.certifications.show:not(.animation-done) .cert-card:nth-child(4) img { transition-delay: 0.65s; }
+.certifications.show:not(.animation-done) .cert-card:nth-child(5) img { transition-delay: 0.8s; }
+.certifications.show:not(.animation-done) .cert-card:nth-child(6) img { transition-delay: 0.95s; }
+
+.certifications.show:not(.animation-done) .cert-card:nth-child(1) figcaption { transition-delay: 0.3s; }
+.certifications.show:not(.animation-done) .cert-card:nth-child(2) figcaption { transition-delay: 0.45s; }
+.certifications.show:not(.animation-done) .cert-card:nth-child(3) figcaption { transition-delay: 0.6s; }
+.certifications.show:not(.animation-done) .cert-card:nth-child(4) figcaption { transition-delay: 0.75s; }
+.certifications.show:not(.animation-done) .cert-card:nth-child(5) figcaption { transition-delay: 0.9s; }
+.certifications.show:not(.animation-done) .cert-card:nth-child(6) figcaption { transition-delay: 1.05s; }
 
 .certifications.animation-done .certifications-images img {
     transition:
@@ -503,7 +523,7 @@ body.lightbox-active {
     }
 
     .header {
-        align-items: flex-start;
+        align-items: center;
         flex-direction: column-reverse;
         gap: 1rem;
     }
@@ -514,7 +534,7 @@ body.lightbox-active {
     }
 
     .reset-btn {
-        align-self: flex-end;
+        align-self: center;
     }
 
     section {
@@ -977,3 +997,88 @@ body.lightbox-active {
     font-weight: 700;
     border-radius: 0.8rem !important;
 }
+
+/* mobile responsiveness of certification cards and labels */
+.cert-card,
+.about-card {
+    text-align: center;
+}
+
+.cert-card img,
+.about-card img {
+    width: 100%;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.cert-card figcaption,
+.about-card figcaption {
+    margin-top: 1rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #ddd;
+}
+
+.certifications-images {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(220px, 1fr));
+    gap: 3rem;
+    width: 100%;
+}
+
+.about-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+}
+
+.about-card:first-child {
+    grid-column: span 2;
+}
+
+@media (max-width: 768px) {
+    .certifications-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .about-images {
+        grid-template-columns: 1fr;
+    }
+
+    .about-card:first-child {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 520px) {
+    .certifications-images {
+        grid-template-columns: 1fr;
+    }
+}
+
+.cert-card figcaption {
+    margin-top: 1.4rem;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-size: 1.6rem;
+
+    font-weight: 600;
+
+    color: #ddd;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.certifications.show .cert-card figcaption {
+    opacity: 1;
+    transform: translateY(0);
+}
+
