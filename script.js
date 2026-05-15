@@ -245,3 +245,38 @@ if (particlesContainer) {
     }
 
 }
+
+// External link SweetAlert
+const externalLinks = document.querySelectorAll(".external-link");
+
+externalLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        const url = link.href;
+
+        Swal.fire({
+            title: "Leave this website?",
+            text: "You're about to leave this website to go to my profile.",
+            icon: "warning",
+            background: "#242424",
+            color: "#ffffff",
+            confirmButtonText: "Go to Link",
+            cancelButtonText: "Stay",
+            showCancelButton: true,
+            confirmButtonColor: "#ffffff",
+            cancelButtonColor: "#555555",
+            customClass: {
+                popup: "custom-swal-popup",
+                title: "custom-swal-title",
+                htmlContainer: "custom-swal-text",
+                confirmButton: "custom-swal-confirm",
+                cancelButton: "custom-swal-cancel"
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.open(url, "_blank", "noopener,noreferrer");
+            }
+        });
+    });
+});
