@@ -304,17 +304,17 @@ section {
 /* ABOUT PAGE */
 .about-container {
     width: 100%;
+    max-width: 1200px;
 
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+
     gap: 5rem;
-    flex-wrap: wrap;
 }
 
 .about-text {
-    flex: 1;
-    min-width: 300px;
+    width: 100%;
+    max-width: 1200px;
 
     opacity: 0;
     transform: translateY(60px);
@@ -346,11 +346,11 @@ section {
 }
 
 .about-images {
-    flex: 1;
-    min-width: 300px;
+    width: 100%;
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+
     gap: 3rem;
 
     overflow: hidden;
