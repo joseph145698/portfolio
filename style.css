@@ -237,6 +237,22 @@ section {
     justify-content: center;
 }
 
+.contact-label {
+    margin-top: 3rem;
+    margin-bottom: 1.2rem;
+
+    text-align: center;
+}
+
+.contact-label p {
+    color: #dddddd;
+
+    font-size: 1.6rem;
+    font-weight: 600;
+
+    letter-spacing: 0.05rem;
+}
+
 .home-custom-btn {
     display: inline-flex;
     justify-content: center;
@@ -272,6 +288,15 @@ section {
         inset 0 0 0 1px rgba(255, 255, 255, 0.25);
 }
 
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+
+    margin-top: 0.5rem;
+}
+
 .social-icons a {
     display: inline-flex;
     justify-content: center;
@@ -279,8 +304,6 @@ section {
 
     width: 4rem;
     height: 4rem;
-
-    margin: 3rem 1.5rem 3rem 0;
 
     color: #ffffff;
     background-color: transparent;
@@ -636,6 +659,23 @@ section {
 
     transition-delay: 0s;
     pointer-events: auto;
+}
+
+.cert-link {
+    color: #bcbcbc;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        text-shadow 0.25s ease;
+}
+
+.cert-link:hover {
+    color: rgb(114, 220, 255);
+
+    text-shadow:
+        0 0 8px rgba(114, 220, 255, 0.6);
 }
 
 /* TECH STACK PAGE */
